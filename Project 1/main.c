@@ -22,7 +22,7 @@ dgemm1(double *a, double *b, double *c, unsigned int n) {
         }
 }
 
-/*dgemm1: simple ijk version triple loop algorithm with register reuse*/
+/*dgemm2: more aggressive register reuse*/
 void
 dgemm2(double *a, double *b, double *c, unsigned int n) {
     unsigned int i,j,k;
@@ -48,6 +48,7 @@ dgemm2(double *a, double *b, double *c, unsigned int n) {
         }
 }
 
+/*dgemm3: maximize the register reuse if we have 16 registers*/
 void
 dgemm3(double *a, double *b, double *c, unsigned int n) {
     unsigned int i,j,k;
@@ -117,7 +118,9 @@ double* runTest(matrixMutiply func, double *a, double *b, unsigned int n) {
     func(a,b,c,n);
     clock_gettime(CLOCK_REALTIME, &ts2);
     timespec_diff(&ts1,&ts2,&diff);
-    printf("timespec is %lu s %lu ns for ", diff.tv_sec, diff.tv_nsec);
+    double timed = diff.tv_sec + 1e-9 * diff.tv_nsec;
+    printf("performace: %.6f Gflops\n", 2*n*n*n*1e-9/timed);
+    printf("timespec is %lu s %lu ns", diff.tv_sec, diff.tv_nsec);
     return c;
 }
 
@@ -126,20 +129,28 @@ int main() {
     unsigned int n;
     srand(12306);
 
-    for (n = 64; n <= 512; n = n*2 ) {
+    for (n = 64; n <= 2048; n = n*2 ) {
         double *a, *b, *c0, *c1, *c2, *c3;
         a = createMatrixWithRandomData(n);
         b = createMatrixWithRandomData(n);
-        printf("\n==================\nRandom data generated\n");
+        printf("\n==================\nRandom data generated\n------------------\n");
+
+        printf("dgemm0, when n = %d\n", n);
         c0 = runTest(dgemm0, a, b, n);
-        printf("c0, when n = %d\n", n);
+        printf("\n------------------\n");
+
+        printf("dgemm1, when n = %d\n", n);
         c1 = runTest(dgemm1, a, b, n);
-        printf("c1, when n = %d\n", n);
+        printf("\n------------------\n");
+
+        printf("dgemm2, when n = %d\n", n);
         c2 = runTest(dgemm2, a, b, n);
-        printf("c2, when n = %d\n", n);
+        printf("\n------------------\n");
+
+        printf("dgemm3, when n = %d\n", n);
         c3 = runTest(dgemm3, a, b, n);
+        printf("\n------------------\n");
         // printMatrix(c3, n);
-        printf("c3, when n = %d\n", n);
 
         if (checkEqual(c0, c1, n) == 0) {
             printf("c1 output error when n = %d\n", n);
