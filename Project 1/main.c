@@ -118,8 +118,10 @@ double* runTest(matrixMutiply func, double *a, double *b, unsigned int n) {
     func(a,b,c,n);
     clock_gettime(CLOCK_REALTIME, &ts2);
     timespec_diff(&ts1,&ts2,&diff);
-    double timed = diff.tv_sec + 1e-9 * diff.tv_nsec;
-    printf("performace: %.6f Gflops\n", 2*n*n*n*1e-9/timed);
+    double timed = (double)(diff.tv_sec) + 1e-9 * (double)(diff.tv_nsec);
+    double n3 = (double)n;
+    double p = 2*n3*n3*n3/timed*1e-9;
+    printf("performace: %lf Gflops\n", p);
     printf("timespec is %lu s %lu ns", diff.tv_sec, diff.tv_nsec);
     return c;
 }

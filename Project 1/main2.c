@@ -14,6 +14,7 @@ dgemm_ijk(double *a, double *b, double *c, unsigned int n) {
 
 void
 dgemm_ijk(double *a, double *b, double *c, unsigned int n) {
+    const unsigned int B = 10;
     /* ijk – blocked version algorithm*/
     for (i = 0; i < n; i+=B)
         for (j = 0; j < n; j+=B)
