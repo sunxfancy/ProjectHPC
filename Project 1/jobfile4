@@ -2,7 +2,7 @@
 #PBS -N Project1-gcc4.7-p2
 #PBS -M xsun042@ucr.edu
 
-JOB_PATH=/home/xsun042/ProjectHPC/Project1-gcc4.7/
+JOB_PATH="/home/xsun042/ProjectHPC/Project1-gcc4.7/"
 cd $(JOB_PATH)
 
 ./p2-O0 2048 -N
