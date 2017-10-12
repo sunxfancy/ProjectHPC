@@ -9,7 +9,7 @@ createMatrix(unsigned int n) {
 
 double*
 createMatrixWithRandomData(unsigned int n) {
-    double* data; int i;
+    double* data; unsigned int i;
     data = createMatrix(n);
     for (i = 0; i < n*n; ++i) {
         data[i] = (double)(rand() % 9987) / 100.0;
@@ -19,7 +19,7 @@ createMatrixWithRandomData(unsigned int n) {
 
 int
 checkEqual(double *a, double *b, unsigned int n) {
-    int i;
+    unsigned int i;
     for (i = 0; i< n; ++i) {
         if (a[i] != b[i]) return 0;
     }
@@ -40,10 +40,28 @@ void timespec_diff(struct timespec *start, struct timespec *stop,
 }
 
 void printMatrix(double* m, unsigned int n) {
-    unsigned int i,j;
+    unsigned int i, j;
     for (i = 0; i < n; ++i) {
         for (j = 0; j < n; ++j)
             printf("%.2f ", m[i*n+j]);
         printf("\n");
     }
+}
+
+typedef void (*matrixMutiply)(double *a, double *b, double *c, unsigned int n);
+
+double* runTest(matrixMutiply func, double *a, double *b, unsigned int n) {
+    double *c, timed, n3, p;
+    struct timespec ts1,ts2,diff;
+    c = createMatrix(n);
+    clock_gettime(CLOCK_REALTIME, &ts1);
+    func(a,b,c,n);
+    clock_gettime(CLOCK_REALTIME, &ts2);
+    timespec_diff(&ts1,&ts2,&diff);
+    timed = (double)(diff.tv_sec) + 1e-9 * (double)(diff.tv_nsec);
+    n3 = (double)n;
+    p = 2*n3*n3*n3/timed*1e-9;
+    printf("performace: %lf Gflops\n", p);
+    printf("timespec is %lu s %lu ns\n", diff.tv_sec, diff.tv_nsec);
+    return c;
 }

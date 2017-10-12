@@ -52,8 +52,8 @@ dgemm2(double *a, double *b, double *c, unsigned int n) {
 void
 dgemm3(double *a, double *b, double *c, unsigned int n) {
     unsigned int i,j,k;
-    int p = (n/3)*3;
-    int r = n - 2;
+    unsigned int p = (n/3)*3;
+    unsigned int r = n - 2;
     for (i = 0; i < r; i+=3)
         for (j = 0; j < r; j+=3) {
             unsigned int t = i*n+j; unsigned int t1 = t+n; unsigned int t2 = t+2*n;
@@ -107,25 +107,6 @@ dgemm3(double *a, double *b, double *c, unsigned int n) {
             for (k = 0; k < n; ++k)
                 c[i*n+j] += a[i*n+k] * b[k*n+j];
 }
-
-typedef void (*matrixMutiply)(double *a, double *b, double *c, unsigned int n);
-
-double* runTest(matrixMutiply func, double *a, double *b, unsigned int n) {
-    double *c;
-    struct timespec ts1,ts2,diff;
-    c = createMatrix(n);
-    clock_gettime(CLOCK_REALTIME, &ts1);
-    func(a,b,c,n);
-    clock_gettime(CLOCK_REALTIME, &ts2);
-    timespec_diff(&ts1,&ts2,&diff);
-    double timed = (double)(diff.tv_sec) + 1e-9 * (double)(diff.tv_nsec);
-    double n3 = (double)n;
-    double p = 2*n3*n3*n3/timed*1e-9;
-    printf("performace: %lf Gflops\n", p);
-    printf("timespec is %lu s %lu ns", diff.tv_sec, diff.tv_nsec);
-    return c;
-}
-
 
 int main() {
     unsigned int n;
