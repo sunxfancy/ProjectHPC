@@ -1,0 +1,184 @@
+
+==================
+Random data generated
+------------------
+dgemm_ijk, when n = 2048
+performace: 0.054473 Gflops
+timespec is 315 s 383790636 ns
+
+------------------
+dgemm_jik, when n = 2048
+performace: 0.039570 Gflops
+timespec is 434 s 167061920 ns
+dgemm_jik output checked when n = 2048
+
+------------------
+dgemm_kij, when n = 2048
+performace: 0.124629 Gflops
+timespec is 137 s 847883457 ns
+dgemm_kij output checked when n = 2048
+
+------------------
+dgemm_ikj, when n = 2048
+performace: 0.166164 Gflops
+timespec is 103 s 391044004 ns
+dgemm_ikj output checked when n = 2048
+
+------------------
+dgemm_jki, when n = 2048
+performace: 0.027611 Gflops
+timespec is 622 s 217316566 ns
+dgemm_jki output checked when n = 2048
+
+------------------
+dgemm_kji, when n = 2048
+performace: 0.032840 Gflops
+timespec is 523 s 145616690 ns
+dgemm_kji output checked when n = 2048
+
+------------------
+Block Size,Performance(Gflops),Time(s)
+254, 0.149936, 114.581277
+
+------------------
+
+Block Size,Performance(Gflops),Time(s)
+30, 0.613885, 27.985492
+
+==================
+Random data generated
+------------------
+dgemm_ijk, when n = 2048
+performace: 0.058794 Gflops
+timespec is 292 s 204730746 ns
+
+------------------
+dgemm_jik, when n = 2048
+performace: 0.053258 Gflops
+timespec is 322 s 580522338 ns
+dgemm_jik output checked when n = 2048
+
+------------------
+dgemm_kij, when n = 2048
+performace: 0.896184 Gflops
+timespec is 19 s 170015378 ns
+dgemm_kij output checked when n = 2048
+
+------------------
+dgemm_ikj, when n = 2048
+performace: 0.900346 Gflops
+timespec is 19 s 81417568 ns
+dgemm_ikj output checked when n = 2048
+
+------------------
+dgemm_jki, when n = 2048
+performace: 0.025294 Gflops
+timespec is 679 s 197854816 ns
+dgemm_jki output checked when n = 2048
+
+------------------
+dgemm_kji, when n = 2048
+performace: 0.032721 Gflops
+timespec is 525 s 41554617 ns
+dgemm_kji output checked when n = 2048
+
+------------------
+Block Size,Performance(Gflops),Time(s)
+254, 1.003989, 17.111604
+
+------------------
+
+Block Size,Performance(Gflops),Time(s)
+30, 2.465943, 6.966854
+
+==================
+Random data generated
+------------------
+dgemm_ijk, when n = 2048
+performace: 0.058966 Gflops
+timespec is 291 s 350841588 ns
+
+------------------
+dgemm_jik, when n = 2048
+performace: 0.036281 Gflops
+timespec is 473 s 522057693 ns
+dgemm_jik output checked when n = 2048
+
+------------------
+dgemm_kij, when n = 2048
+performace: 0.914810 Gflops
+timespec is 18 s 779707813 ns
+dgemm_kij output checked when n = 2048
+
+------------------
+dgemm_ikj, when n = 2048
+performace: 0.904707 Gflops
+timespec is 18 s 989433106 ns
+dgemm_ikj output checked when n = 2048
+
+------------------
+dgemm_jki, when n = 2048
+performace: 0.026434 Gflops
+timespec is 649 s 904531591 ns
+dgemm_jki output checked when n = 2048
+
+------------------
+dgemm_kji, when n = 2048
+performace: 0.025803 Gflops
+timespec is 665 s 807789506 ns
+dgemm_kji output checked when n = 2048
+
+------------------
+Block Size,Performance(Gflops),Time(s)
+254, 0.978656, 17.554550
+
+------------------
+
+Block Size,Performance(Gflops),Time(s)
+30, 2.037464, 8.431987
+
+==================
+Random data generated
+------------------
+dgemm_ijk, when n = 2048
+performace: 0.028073 Gflops
+timespec is 611 s 966144699 ns
+
+------------------
+dgemm_jik, when n = 2048
+performace: 0.028304 Gflops
+timespec is 606 s 985078884 ns
+dgemm_jik output checked when n = 2048
+
+------------------
+dgemm_kij, when n = 2048
+performace: 0.865632 Gflops
+timespec is 19 s 846622244 ns
+dgemm_kij output checked when n = 2048
+
+------------------
+dgemm_ikj, when n = 2048
+performace: 0.712692 Gflops
+timespec is 24 s 105610690 ns
+dgemm_ikj output checked when n = 2048
+
+------------------
+dgemm_jki, when n = 2048
+performace: 0.021505 Gflops
+timespec is 798 s 867150762 ns
+dgemm_jki output checked when n = 2048
+
+------------------
+dgemm_kji, when n = 2048
+performace: 0.020244 Gflops
+timespec is 848 s 623443673 ns
+dgemm_kji output checked when n = 2048
+
+------------------
+Block Size,Performance(Gflops),Time(s)
+254, 1.008490, 17.035238
+
+------------------
+
+Block Size,Performance(Gflops),Time(s)
+30, 2.255688, 7.616243
