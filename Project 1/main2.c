@@ -234,7 +234,7 @@ double* runTestWithBlock(matrixMutiplyWithBlock func, double *a, double *b, unsi
 
 
 int main(int argc, char *argv[]) {
-    unsigned int n, B;
+    unsigned int n, B; int flag = 0;
     double *a, *b, *c0, *c1, p_out, t_out;
     
     srand(12306);
@@ -243,6 +243,9 @@ int main(int argc, char *argv[]) {
         exit(0);
     }
     n = atoi(argv[1]);
+    if (argc == 3 && argv[2][1] == 'N') {
+        flag = 1;
+    }
     a = createMatrixWithRandomData(n);
     b = createMatrixWithRandomData(n);
     printf("\n==================\nRandom data generated\n------------------\n");
@@ -258,7 +261,8 @@ int main(int argc, char *argv[]) {
     RunAndCheckAns(dgemm_kji, c1);
     
     printf("Block Size,Performance(Gflops),Time(s)\n");
-    for (B = 8; B <= 256; B+=2) {
+    if (flag) {
+        B = 254;  //  got the best B by local test
         c1 = runTestWithBlock(dgemm_blocked_ikj, a, b, n, B, &p_out, &t_out);
         printf("%d, %lf, %lf\n", B, p_out, t_out);
         
@@ -268,10 +272,26 @@ int main(int argc, char *argv[]) {
             exit(1);
         } 
         free(c1);
+    } else {
+        for (B = 8; B <= 256; B+=2) {
+            c1 = runTestWithBlock(dgemm_blocked_ikj, a, b, n, B, &p_out, &t_out);
+            printf("%d, %lf, %lf\n", B, p_out, t_out);
+            
+            if (checkEqual(c0, c1, n) == 0) {
+                // printMatrix(c1, n);
+                printf("%s output error when n = %d\n", "dgemm_blocked_ikj", n);
+                exit(1);
+            } 
+            free(c1);
+        }
     }
+
     printf("\n------------------\n\n");
+
+    // testing the dgemm_mixed
     printf("Block Size,Performance(Gflops),Time(s)\n");
-    for (B = 8; B <= 256; B+=2) {
+    if (flag) {
+        B = 30; // got the best B by local test
         c1 = runTestWithBlock(dgemm_mixed, a, b, n, B, &p_out, &t_out);
         printf("%d, %lf, %lf\n", B, p_out, t_out);
         
@@ -281,6 +301,18 @@ int main(int argc, char *argv[]) {
             exit(1);
         } 
         free(c1);
+    } else {
+        for (B = 8; B <= 256; B+=2) {
+            c1 = runTestWithBlock(dgemm_mixed, a, b, n, B, &p_out, &t_out);
+            printf("%d, %lf, %lf\n", B, p_out, t_out);
+            
+            if (checkEqual(c0, c1, n) == 0) {
+                // printMatrix(c1, n);
+                printf("%s output error when n = %d\n", "dgemm_mixed", n);
+                exit(1);
+            } 
+            free(c1);
+        }
     }
 
     free(a); free(b);

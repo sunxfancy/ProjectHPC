@@ -31,7 +31,7 @@ $(TP1):
 	./$(subst test-,,$@)
 
 $(TP2):
-	./$(subst test-,,$@) 2048
+	./$(subst test-,,$@) 2048 -N
 
 clean:
 	rm -rf p1 p2 $(P1) $(P2) *.o* *.e*
