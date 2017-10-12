@@ -5,4 +5,7 @@
 JOB_PATH=/home/xsun042/ProjectHPC/Project1-gcc4.7/
 cd $(JOB_PATH)
 
-make test-p2
+./p2-O0 2048 -N
+./p2-O1 2048 -N
+./p2-O2 2048 -N
+./p2-O3 2048 -N

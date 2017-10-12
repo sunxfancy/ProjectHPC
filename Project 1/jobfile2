@@ -5,4 +5,4 @@
 JOB_PATH=/home/xsun042/ProjectHPC/Project1-gcc5.1/
 cd $(JOB_PATH)
 
-make test-p2-O3
+./p2-O3
