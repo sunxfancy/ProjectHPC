@@ -1,8 +1,8 @@
-#PBS -l nodes=1:ppn=1,walltime=01:00:00
-#PBS -N Project1-gcc5.1-p1-O3
+#PBS -l nodes=1:ppn=1,walltime=10:00:00
+#PBS -N Project1-gcc5.1-p2-O3
 #PBS -M xsun042@ucr.edu
 
 JOB_PATH=/home/xsun042/ProjectHPC/Project1-gcc5.1/
 cd $(JOB_PATH)
 
-make test-p1-O3
+make test-p2-O3

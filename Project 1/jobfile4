@@ -1,0 +1,8 @@
+#PBS -l nodes=1:ppn=1,walltime=12:00:00
+#PBS -N Project1-gcc4.7-p2
+#PBS -M xsun042@ucr.edu
+
+JOB_PATH=/home/xsun042/ProjectHPC/Project1-gcc4.7/
+cd $(JOB_PATH)
+
+make test-p2
