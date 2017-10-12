@@ -1,0 +1,46 @@
+
+==================
+Random data generated
+------------------
+dgemm_ijk, when n = 2048
+performace: 0.046080 Gflops
+timespec is 372 s 830062219 ns
+
+------------------
+dgemm_jik, when n = 2048
+performace: 0.033786 Gflops
+timespec is 508 s 493151201 ns
+dgemm_jik output checked when n = 2048
+
+------------------
+dgemm_kij, when n = 2048
+performace: 0.893692 Gflops
+timespec is 19 s 223485650 ns
+dgemm_kij output checked when n = 2048
+
+------------------
+dgemm_ikj, when n = 2048
+performace: 0.525598 Gflops
+timespec is 32 s 686355814 ns
+dgemm_ikj output checked when n = 2048
+
+------------------
+dgemm_jki, when n = 2048
+performace: 0.021321 Gflops
+timespec is 805 s 764987996 ns
+dgemm_jki output checked when n = 2048
+
+------------------
+dgemm_kji, when n = 2048
+performace: 0.021335 Gflops
+timespec is 805 s 244371278 ns
+dgemm_kji output checked when n = 2048
+
+------------------
+Block Size,Performance(Gflops),Time(s)
+254, 0.999529, 17.187971
+
+------------------
+
+Block Size,Performance(Gflops),Time(s)
+30, 2.427951, 7.075870
