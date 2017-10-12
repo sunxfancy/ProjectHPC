@@ -1,4 +1,4 @@
-
+#!/bin/sh
 cp -r Project\ 1/ Project1-gcc5.1/
 cp -r Project\ 1/ Project1-gcc4.7/
 cp -r Project\ 1/ Project1-gcc4.4/
@@ -15,7 +15,7 @@ cd ..
 
 cd Project1-gcc4.7/
 module purge
-module load gcc-4.7.1
+module load gcc-4.7.2
 gcc -v
 make
 qsub jobfile4
