@@ -1,0 +1,162 @@
+
+==================
+Random data generated
+------------------
+dgemm0, when n = 64
+performace: 0.391829 Gflops
+timespec is 0 s 1338053 ns
+
+------------------
+dgemm1, when n = 64
+performace: 0.452596 Gflops
+timespec is 0 s 1158403 ns
+
+------------------
+dgemm2, when n = 64
+performace: 1.284403 Gflops
+timespec is 0 s 408196 ns
+
+------------------
+dgemm3, when n = 64
+performace: 1.215230 Gflops
+timespec is 0 s 431431 ns
+
+------------------
+c1 output checked when n = 64
+c2 output checked when n = 64
+c3 output checked when n = 64
+
+==================
+Random data generated
+------------------
+dgemm0, when n = 128
+performace: 0.432019 Gflops
+timespec is 0 s 9708610 ns
+
+------------------
+dgemm1, when n = 128
+performace: 0.704979 Gflops
+timespec is 0 s 5949541 ns
+
+------------------
+dgemm2, when n = 128
+performace: 1.909040 Gflops
+timespec is 0 s 2197075 ns
+
+------------------
+dgemm3, when n = 128
+performace: 2.249464 Gflops
+timespec is 0 s 1864579 ns
+
+------------------
+c1 output checked when n = 128
+c2 output checked when n = 128
+c3 output checked when n = 128
+
+==================
+Random data generated
+------------------
+dgemm0, when n = 256
+performace: 0.112996 Gflops
+timespec is 0 s 296952956 ns
+
+------------------
+dgemm1, when n = 256
+performace: 0.687594 Gflops
+timespec is 0 s 48799753 ns
+
+------------------
+dgemm2, when n = 256
+performace: 2.061688 Gflops
+timespec is 0 s 16275225 ns
+
+------------------
+dgemm3, when n = 256
+performace: 1.936358 Gflops
+timespec is 0 s 17328629 ns
+
+------------------
+c1 output checked when n = 256
+c2 output checked when n = 256
+c3 output checked when n = 256
+
+==================
+Random data generated
+------------------
+dgemm0, when n = 512
+performace: 0.061442 Gflops
+timespec is 4 s 368927611 ns
+
+------------------
+dgemm1, when n = 512
+performace: 0.179235 Gflops
+timespec is 1 s 497670659 ns
+
+------------------
+dgemm2, when n = 512
+performace: 0.750319 Gflops
+timespec is 0 s 357762005 ns
+
+------------------
+dgemm3, when n = 512
+performace: 1.063132 Gflops
+timespec is 0 s 252494988 ns
+
+------------------
+c1 output checked when n = 512
+c2 output checked when n = 512
+c3 output checked when n = 512
+
+==================
+Random data generated
+------------------
+dgemm0, when n = 1024
+performace: 0.041586 Gflops
+timespec is 51 s 639938661 ns
+
+------------------
+dgemm1, when n = 1024
+performace: 0.075319 Gflops
+timespec is 28 s 511784229 ns
+
+------------------
+dgemm2, when n = 1024
+performace: 0.366693 Gflops
+timespec is 5 s 856354677 ns
+
+------------------
+dgemm3, when n = 1024
+performace: 0.656449 Gflops
+timespec is 3 s 271363419 ns
+
+------------------
+c1 output checked when n = 1024
+c2 output checked when n = 1024
+c3 output checked when n = 1024
+
+==================
+Random data generated
+------------------
+dgemm0, when n = 2048
+performace: 0.029035 Gflops
+timespec is 591 s 701049009 ns
+
+------------------
+dgemm1, when n = 2048
+performace: 0.036924 Gflops
+timespec is 465 s 274180622 ns
+
+------------------
+dgemm2, when n = 2048
+performace: 0.218133 Gflops
+timespec is 78 s 758743510 ns
+
+------------------
+dgemm3, when n = 2048
+performace: 0.421092 Gflops
+timespec is 40 s 798363967 ns
+
+------------------
+c1 output checked when n = 2048
+c2 output checked when n = 2048
+c3 output checked when n = 2048
