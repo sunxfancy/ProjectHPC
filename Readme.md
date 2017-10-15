@@ -7,11 +7,11 @@ Support enviorment: Linux & MacOSX
 
 ## File Structure
 
-`Project 1` is the main directory for the project. For supporting multiple gcc versions, I copy the code to different directories and build in those pathes. 
+`Project 1` is the main directory for the project. For supporting multiple gcc versions, I copy the code to different directories and build in those paths. 
 
-There are four jobfile for running the code on our cluster. 
+There are four job files for running the code on our cluster. 
 
-`qsub.sh` is a convenient shell script to submit all of tasks. 
+`qsub.sh` is a convenient shell script to submit all tasks. 
 
 
 ## Build
@@ -24,9 +24,9 @@ The program `p2` used the cache reuse and blocking, also has a mixed version whi
 
 ## Testing
 
-Run `test` for full test in one of the verison of the code.
+Run `test` for a full test in one of the verison of the code.
 
-There are some args are quite important for `p2` program.
+There are some args are quite important for the `p2` program.
 
 First argument is a number, that's used for the test scale. To meet our requirements, 2048 should be passed. The second argument is `-N` or null, if this argument is null, the program will try to find a block size for best performance.
 
